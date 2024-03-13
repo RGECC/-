@@ -1,0 +1,67 @@
+/* pages/admindingdan/admindingdan.wxss */
+/* 顶部选择栏 */
+.tabs_root{
+  display: flex;
+}
+.tabs_item{
+  height: 100rpx;
+  line-height: 100rpx;
+  flex: 1;
+  text-align: center;
+}
+/* 选中后再tabs栏下方出现红色条 */
+.xuanzhong_tab{
+  color: orange;
+  border-bottom: 4rpx solid red;
+}
+.order_id{
+  font-size: 35rpx;
+  padding: 15rpx;
+  border-bottom: 3rpx solid gainsboro;
+}
+.order_prince{
+  padding: 15rpx;
+  border-bottom: 3rpx solid gainsboro;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+}
+.order_time{
+  font-size: 35rpx;
+  color: orange;
+  margin-bottom: 1rpx;
+}
+/* 二层列表 */
+.order_item2{
+  padding: 20rpx;
+  border-bottom: 3rpx solid gainsboro;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+}
+.order_prince2{
+  color: gold;
+}
+        /* 购物车中没有商品时的提示 */
+.noting{
+ text-align: center;
+ margin-top: 200rpx;
+}
+.notingtext{
+ background: orange;
+ padding: 30rpx;
+ color: black;
+ border-radius: 40rpx;
+}
+.quxiao{
+  margin-right: 300rpx;
+  margin-left: 250rpx;
+  background: coral;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+.tiao {
+  height: 1px; /* 分隔线的高度 */
+  background-color: #ccc; /* 灰色背景色 */
+  margin-top: 10px; /* 分隔线与上面评论的间距 */
+  margin-bottom: 10px; /* 分隔线与下面评论的间距 */
+}

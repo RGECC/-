@@ -1,0 +1,22 @@
+/* pages/admin/admin.wxss */
+/* 根页面设置 */
+page{
+  background: gold
+
+}
+.root{
+   background: white;
+   border-radius: 80rpx;
+   padding: 50rpx;
+   margin: 20rpx;
+}
+input{
+  padding: 20rpx;
+  border: 5rpx solid gold;
+  border-radius: 10rpx;
+}
+button{
+  margin-top: 40rpx;
+  width: 400rpx;
+  color: white;
+}

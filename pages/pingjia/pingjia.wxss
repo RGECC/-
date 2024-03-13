@@ -1,0 +1,43 @@
+/* pages/pingjia/pingjia.wxss */
+/* 顶部选择栏 */
+
+.tabs_root{
+  display: flex;
+}
+.tabs_item{
+  height: 100rpx;
+  line-height: 100rpx;
+  flex: 1;
+  text-align: center;
+}
+/* 选中后再tabs栏下方出现红色条 */
+.xuanzhong_tab{
+  color: orange;
+  border-bottom: 4rpx solid red;
+}
+/* 评价列表 */
+.item_root{
+  background: white;
+  margin-bottom: 5rpx;
+}
+.item_top{
+  display: flex;
+  align-items: center;
+  padding: 15rpx;
+}
+.item_touxiang{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+}
+.tiao {
+  height: 1px; /* 分隔线的高度 */
+  background-color: #ccc; /* 灰色背景色 */
+  margin-top: 10px; /* 分隔线与上面评论的间距 */
+  margin-bottom: 10px; /* 分隔线与下面评论的间距 */
+}
+.item_neirong{
+  margin: 30rpx 10rpx;
+  margin-left: 135rpx;
+}

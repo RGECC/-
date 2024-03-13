@@ -1,0 +1,78 @@
+<!--pages/diancan/diancan.wxml-->
+
+<!--轮播图的设置-->
+<swiper indicator-dots="{{true}}" indicator-active-color="#ff0000" autoplay="true" circular="true">
+<!--为了提高性能，在使用wx:for时添加wx:key。经控制台查询可知道拉取的图片地址名字叫"lunbotu",因此在src内填上item.lunbotu-->
+  <swiper-item wx:for="{{list}}" wx:key="index">
+    <image src="{{item.lunbotu}}" style="width: 750rpx; height: 412rpx; display: inline-block; box-sizing: border-box">
+    </image>
+  </swiper-item>
+</swiper>
+<!--分类选择栏，菜品栏的设置-->
+<view class="ROOT">
+  <!--左边选择栏-->
+  <view class="leftroot">
+      <view wx:for="{{tabs}}" bind:tap="selecttap" data-index="{{index}}" wx:key="index" class="tab_item {{index==leftlist?'select':''}}">
+      {{item._id}}
+      </view>
+  </view>
+  <!--以下为菜品列表的设置-->
+  <!--分别为菜品列表，图片，名字，销量和价格的设置-->
+  <view class="food_list">
+    <view wx:for="{{foodlist}}" wx:key="index" class="caipinliebiao">
+      <image class="item_tupian" src="{{item.caipintupian}}"></image>
+      <view>
+        <view class="item_name">{{item.mingzi}}</view>
+        <view class="item_xiaoliang">销量：{{item.xiaoliang}}</view>
+        <view class="bottom_root" style="position: relative; left: 244rpx; top: 0rpx">
+          <view class="item_prince">价格¥：{{item.prince}}元</view>
+          <!--对数量加减图标和数字的设置-->
+          <image bind:tap="jia" data-id="{{item._id}}" class="jiajian" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-08/19321707399200930_jia.png?sign=daceb80167c7fccc34383182bfd2c05b&t=1707399211"></image>
+            <!--设置item.num，如果没有num值的话默认他的值为0-->
+            <text class="number">{{item.num?item.num:0}}</text>
+            <image bind:tap="jian" data-id="{{item._id}}" class="jiajian" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-08/10191707399207610_jian.png?sign=1137a9581cb268bf07ae51bc217250b4&t=1707399231"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--以下为底部区域购物车以及总计的设置-->
+<view class="bottom_all">
+ <view class="gouwuche" bind:tap="openmengceng">
+  <image class="gouwuche_img" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-09/10511707488943459_购物车.png?sign=064aa6f87a8db585936a45d723a35c55&t=1707488957"></image>
+ </view>
+ <view class="zongji">总计{{totalprince}}元，{{totalnum}}件菜品</view>
+ <view class="xuanhaole" bind:tap="goorder">选好了去支付</view>
+</view>
+<!--以下为购物车展开后的蒙层-->
+<view hidden="{{ishiddenmengceng}}" class="mengceng"></view>
+<!--购物车展开后的列表-->
+<view hidden="{{ishiddenmengceng}}" class="gouwucheliebiao">
+  <view class="liebiaoding">
+    <view bind:tap="closemengceng">返回</view>
+    <view class="toptitle">购物车</view>
+    <view bind:tap="clearcart">清空购物车</view>
+  </view>
+  <!--以下为购物车内的列表展示-->
+<view wx:if="{{gouwuchelist&&gouwuchelist.length>0}}">
+  <scroll-view class="gouwuche_in_list">
+    <view wx:for="{{gouwuchelist}}" wx:key="index">
+    <view class="gouwuche_item">
+      <image class="item_tupian" src="{{item.caipintupian}}"></image>
+      <view class="gouwuche_item_left">
+        <view>{{item.mingzi}}</view>
+        <view class="gouwuche_item_prince">¥：{{item.prince}}元</view>
+      </view>
+        <image bind:tap="jia" data-id="{{item._id}}" class="jiajian" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-08/19321707399200930_jia.png?sign=daceb80167c7fccc34383182bfd2c05b&t=1707399211"></image>
+            <!--设置item.num，如果没有num值的话默认他的值为0-->
+            <text class="number">{{item.num?item.num:0}}</text>
+            <image bind:tap="jian" data-id="{{item._id}}" class="jiajian" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-08/10191707399207610_jian.png?sign=1137a9581cb268bf07ae51bc217250b4&t=1707399231"></image>
+            <image bind:tap="close_itemlist" data-index="{{index}}" class="gouwuche_item_close" src="https://6469-diancan-9ggfzy3w82b5a9ea-1323833298.tcb.qcloud.la/kit-cms-upload/2024-02-12/17061707731068557_删除按钮.png?sign=0d26c845f3adb2037049fe9a7f128c11&t=1707731073"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view wx:else="" class="noting" bind:tap="closemengceng">
+  <text class="notingtext"> 购物车还没有东西,去点些吃的吧~</text>
+</view>
+</view>

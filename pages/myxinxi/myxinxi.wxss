@@ -1,0 +1,33 @@
+/* pages/myxinxi/myxinxi.wxss */
+.name_root{
+  line-height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 38rpx;
+}
+.name_input{
+  flex: 1;
+  height: 70rpx;
+  padding-left: 30rpx;
+  border: 1px solid #f4c903;
+  border-radius: 30rpx;
+}
+.callnum_root{
+  line-height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 38rpx;
+}
+.callnum_input{
+  flex: 1;
+  height: 70rpx;
+  padding-left: 30rpx;
+  border: 1px solid #f4c903;
+  border-radius: 30rpx;
+}
+.baocun{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+}

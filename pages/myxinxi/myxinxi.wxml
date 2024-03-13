@@ -1,0 +1,10 @@
+<!--pages/myxinxi/myxinxi.wxml-->
+<view  class="name_root">
+<text>昵称：</text>
+<input bindinput="getname" class="name_input" placeholder="请在这里填写您的昵称"/>
+</view>
+<view  class="callnum_root">
+<text> 电话：</text>
+<input bindinput="callnum" class="callnum_input" placeholder="请在这里填写您的电话号码"/>
+</view>
+<button class="baocun" type="primary" bind:tap="baocun">保存</button>

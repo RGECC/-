@@ -1,0 +1,23 @@
+<!--pages/pingjia/pingjia.wxml-->
+<!--顶部选择栏-->
+<view class="tabs_root">
+  <view class="tabs_item {{currenttap==index?'xuanzhong_tab':''}}" wx:for="{{tabs}}" wx:key="index" bind:tap="selecttap" data-index="{{index}}">
+    {{item}}
+  </view>
+</view>
+<!--评价列表-->
+<view>
+  <view class="item_root" wx:for="{{list}}" wx:key="index">
+    <view class="item_top">
+      <image class="item_touxiang" src="{{item.avatarUrl}}"></image>
+      <view>
+      <view>{{item.time}}</view>
+        <text>{{item.name}}评论了：
+        </text>
+      </view>
+    </view>
+        <view class="item_neirong">{{item.neirong}}
+        </view>
+      <view class="tiao"></view> <!-- 这是添加的分隔线 -->
+  </view>
+</view>

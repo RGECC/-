@@ -1,0 +1,177 @@
+/* pages/order/order.wxss */
+/* 订单页上方大标题 */
+.title{
+  font-size: 45rpx;
+  padding: 10rpx;
+  border-bottom: solid 5rpx gainsboro;
+  background: gold;
+  text-align: center; /* 文本水平居中 */
+  vertical-align: middle; /* 文本垂直居中 */
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+/* 列表布局 */
+.list_root{
+  margin-left: 100rpx;
+}
+/* 订单里每一行的设置 */
+.list_item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  border-bottom: 2rpx solid gainsboro;
+  font-size: 45rpx;
+}
+/* 订单菜品名 */
+.list_item_name{
+  margin-left: 20rpx;
+}
+/* 订单价格设置 */
+.list_item_prince{
+  margin-right: 20rpx;
+  font-weight: bolder;
+  color: orange;
+}
+.total{
+  padding-left: 200rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  padding-right: 15rpx;
+  font-size: 45rpx;
+  font-weight: bolder;
+  color: orange;
+  border-bottom: solid 5rpx gainsboro;
+}
+/* 桌号区域设置 */ 
+.title2{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  font-size: 35rpx;
+  padding: 5rpx;
+  border-bottom: solid 5rpx gainsboro;
+  background: gold;
+  text-align: center; /* 文本水平居中 */
+  vertical-align: middle; /* 文本垂直居中 */
+  padding: 10rpx;
+  border-radius: 40rpx;
+}
+/* 桌号数字设置 */
+.num{
+  font-size: 38rpx;
+  color: red;
+}
+/* 扫码提示 */
+.saoma_tips{
+  font-size: 40rpx;
+  color: red;
+}
+/* 用餐人数 */
+.title3{
+  font-size: 45rpx;
+  padding: 10rpx;
+  border-bottom: solid 5rpx gainsboro;
+}
+/* 点餐人数列表的设置 */
+.peoplelistroot{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* 人数框的设置 */
+.people_item{
+  width: 130rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  border: 1rpx solid gray;
+  text-align: center;
+  font-size: 45rpx;
+  margin: 10rpx;
+  border-radius: 40rpx;
+}
+/* 选中后颜色的变化 */
+.xuanzhong{
+  background: gold;
+}
+/* 提交按钮 */
+.tijiao{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  margin-top: 50rpx;
+}
+/* 备注设置 */
+.beizhu_root{
+  font-size: 45rpx;
+  padding: 10rpx;
+  margin-top: 5rpx;
+  border-top: solid 5rpx gainsboro;
+  border-bottom: solid 5rpx gainsboro;
+  display: flex;
+}
+/* 备注框设置 */
+.beizhu_input{
+  flex: 1;
+  border: 1px solid gainsboro;
+  padding: 20rpx;
+}
+       /* 购物车展开后蒙层的布局设置 */
+       .mengceng{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;  
+        opacity: 0.5;    /* 设置组件的背景透明度 */
+        background-color: black;
+        z-index: 100;  /* 设置组件的层级 */
+      }
+             /* 购物车展开后的列表布局设置 */
+     .gouwucheliebiao{
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       height: 550rpx;
+       background: white;
+       z-index: 200;   /* 设置组件的层级 */
+       overflow: auto;
+     }
+             /* 购物车列表顶部布局设置 */
+.liebiaoding{
+  display: flex;
+  justify-content: space-between;
+  background:#ffe9cd ;
+  height: 60rpx;
+  color: rgb(0, 0, 0);
+  padding: 5rpx 15rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 300;   /* 设置组件的层级 */
+}
+        /* 购物车列表顶部文字设置 */
+        .toptitle{
+          font-size: 35rpx;
+        }
+                /* 购物车的内置列表设置 */
+.gouwuche_in_list{
+  margin-top: 65rpx;
+}
+        /* 购物车内列表设置 */
+        .gouwuche_item{
+          display: flex;
+          border-bottom: 1px solid gray;
+          padding: 20rpx;
+          align-items: center;
+          font-size: 40rpx;
+        }
+        .gouwuche_item_prince{
+          font-weight: bolder;
+          color: orange;
+          margin-left: 100rpx;
+        }
+         /* 菜品图片大小的设置 */
+ .item_tupian{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 20%;
+}

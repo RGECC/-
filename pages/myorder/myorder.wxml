@@ -1,0 +1,37 @@
+<!--pages/myorder/myorder.wxml-->
+<!--顶部选择栏-->
+<view class="tabs_root">
+  <view class="tabs_item {{currenttap==index?'xuanzhong_tab':''}}" wx:for="{{tabs}}" wx:key="index" bind:tap="selecttap" data-index="{{index}}">
+    {{item}}
+  </view>
+</view>
+<!--订单列表-->
+<view wx:if="{{list&&list.length>0}}">
+  <view wx:for="{{list}}" wx:key="index">
+  <view class="order_id">订单号：{{item._id}}</view>
+  <!--订单列表一层-->
+  <view>
+    <view>
+      <!--嵌套在一层列表里的二层列表-->
+          <view class="order_item2" wx:for="{{item.orderlist}}" wx:for-item2="item2" wx:key="index">
+          {{item.mingzi}}
+            <text class="order_prince2">¥{{item.prince}}</text> X {{item.num}}
+          </view>
+        <view class="order_prince">总价：{{item.totalprince}}元</view>
+        <view class="order_prince">桌号：{{item.zhuohao}}</view>
+      </view>
+      <view class="order_time">下单时间：{{item.time}}</view>
+            <!--取消订单按钮-->
+      <view wx:if="{{currenttap==0}}" class="quxiao" bind:tap="quxiaodingdan" data-id="{{item._id}}">取消订单</view>
+                  <!--去评价按钮-->
+      <view wx:if="{{currenttap==1}}" class="quxiao" bind:tap="pingjia" data-id="{{item._id}}">去评价</view>
+             <!--已完成，查看评价-->
+      <view wx:if="{{currenttap==2}}" class="quxiao" bind:tap="chakan">查看评价</view>
+      <view class="tiao"></view> <!-- 这是添加的分隔线 -->
+  </view>
+
+  </view>
+</view>
+<view wx:else="" class="noting">
+  <text class="notingtext"> 还没有订单,去点些吃的吧~</text>
+</view>

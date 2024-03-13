@@ -1,0 +1,58 @@
+<!--pages/order/order.wxml-->
+<view class="title">您 的 订 单</view>
+<!--订单列表区域-->
+<view class="list_root">
+  <view wx:for="{{list}}" wx:key="index">
+    <view class="list_item">
+      <image class="item_tupian" src="{{item.caipintupian}}"></image>
+      <text class="list_item_name">{{item.mingzi}} {{item.num}} 件 * </text>
+      <text class="list_item_prince"> ¥ {{item.prince}} 元</text>
+    </view>
+  </view>
+</view>
+<!--合计区域-->
+<view class="total">合计：共 {{totalprince}} 元, {{totalnum}} 份</view>
+<!--桌号-->
+<view class="title2">
+<text>您的桌号：</text>
+<text wx:if="{{zhuohaonum}}" class="num">{{zhuohaonum}}</text>
+<text wx:else class="saoma_tips" bind:tap="saoma">您还未扫桌号码，点击扫码！</text>
+</view>
+<!--用餐人数-->
+<view class="title3">
+  <text>用餐人数：</text>
+  <text class="people_num">{{people}}</text>
+</view>
+<!--用餐人数列表展示-->
+<view class="peoplelistroot">
+  <view wx:for="{{peoplelist}}" wx:key="index" class="people_item {{people==item?'xuanzhong':''}}" bind:tap="dianji" data-item="{{item}}">
+    {{item}}
+  </view>
+</view>
+<!--填写备注-->
+<view class="beizhu_root">
+  <text>备注：</text>
+  <input class="beizhu_input" bindinput="get_beizhu"></input>
+</view>
+<button class="tijiao" type="primary" bind:tap="openmengceng">提交订单</button>
+
+<!--以下为购物车展开后的蒙层-->
+<view hidden="{{ishiddenmengceng}}" class="mengceng"></view>
+<!--购物车展开后的列表-->
+<view hidden="{{ishiddenmengceng}}" class="gouwucheliebiao">
+  <view class="liebiaoding">
+    <view bind:tap="closemengceng">返回</view>
+    <view class="toptitle">微信支付页</view>
+  </view>
+  <scroll-view class="gouwuche_in_list">
+    <view wx:for="{{paylist}}" wx:key="index">
+    <view class="gouwuche_item"  bind:tap="tijiao">
+
+        <view>{{item}}</view>
+        <view class="gouwuche_item_prince">点击支付：{{totalprince}}元</view>
+
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

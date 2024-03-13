@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/diancan/diancan",
+    "pages/wode/wode",
+    "pages/order/order",
+    "pages/myxinxi/myxinxi",
+    "pages/myorder/myorder",
+    "pages/pingjia/pingjia",
+    "pages/admin/admin",
+    "pages/admindingdan/admindingdan"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "点餐小程序毕业设计",
+    "navigationBarBackgroundColor": "#FFFACD"
+  },
+  "tabBar": {
+    "color": "#Fc0",
+    "selectedColor": "#F4C903",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/image/diancan-2.png",
+        "iconPath": "pages/image/diancan.png",
+        "pagePath": "pages/diancan/diancan",
+        "text": "点餐"
+      },
+      {
+        "selectedIconPath": "pages/image/wodedangxuan.png",
+        "iconPath": "pages/image/wode.png",
+        "pagePath": "pages/wode/wode",
+        "text": "我的"
+      }
+    ]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,12 @@
+<!--pages/admin/admin.wxml-->
+<!--账号密码登陆界面-->
+<view wx:if="{{nologin}}" class="root">
+  账号：<input bindinput="getname"></input>
+  密码：<input bindinput="getpassword"></input>
+  <button type="primary" bind:tap="gologin">管理员登录</button>
+</view>
+<!--登录成功状态-->
+<view wx:else>
+  <button type="primary" bind:tap="gohouchu">管理订单</button>
+  <button type="primary" bind:tap="loginout">退出登录</button>
+</view>

@@ -1,0 +1,48 @@
+<!--pages/wode/wode.wxml-->
+<!--以下beijingtupian为设定头像后的背景图片，均使用可视化调整尺寸和大小-->
+<view class="beijingtupian">
+  <!--以下avatar-wrapper为设定可以点击互动的按钮-->
+<button wx:if="{{!defaultAvatarUrl}}" class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width: 263rpx; height: 263rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">
+  <!--以下touxiang设定为获取到的头像尺寸和位置-->
+  <image class="touxiang" src="{{avatarUrl}}" style="width: 272rpx; height: 266rpx; display: inline-block; box-sizing: border-box; position: relative; left: -34rpx; top: 0rpx"></image>
+</button>
+<!--以下loginout设定为在已经登录情况下的退出登录按钮，这里的wx.if函数为判断是否在登录的情况下-->
+<button wx:if="{{islogin}}" bind:tap="loginout">退出登录</button>
+</view>
+
+<!--以下为在登录情况下展示给用户的选项行-->
+<view wx:if="{{islogin}}">
+  <view class="beijingse" bind:tap="xinxi">
+    <text>编辑我的详细信息</text>
+    <view class="jiantou"></view>
+  </view>
+  <view class="beijingse" bind:tap="dingdan">
+    <text>我的订单</text>
+    <view class="jiantou"></view>
+  </view>
+  <view class="beijingse" bind:tap="pingjia">
+    <text>我的评价</text>
+    <view class="jiantou"></view>
+  </view>
+  <view class="beijingse">
+  <!--以下为使用微信官方提供的open-type="feedback"反馈方式反馈用户的问题-->
+    <button class="button" open-type="feedback">反馈建议</button>
+    <view class="jiantou"></view>
+  </view>
+  <view class="beijingse">
+  <!--以下为使用微信官方提供的open-type="contact"联系客服方式-->
+    <button class="button" open-type="contact">联系客服</button>
+    <view class="jiantou"></view>
+  </view>
+</view>
+<!--这里不论登录还是未登录都显示出来给用户查看-->
+<view class="beijingse"  bind:tap="call">
+  <text>联系商家：123456789</text>
+  <view class="jiantou"></view>
+</view>
+<view class="beijingse" bind:tap="goadmin">
+  <text>管理员登录</text>
+  <view class="jiantou"></view>
+</view>
+
+
